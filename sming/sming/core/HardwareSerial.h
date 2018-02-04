@@ -12,8 +12,8 @@
 #include "../wiring/Stream.h"
 #include "Delegate.h"
 #include "../commandprocessing/CommandProcessingIncludes.h"
-#include "espressif/esp8266/uart_register.h"
-#include "espressif/esp8266/pin_mux_register.h"
+#include "soc/uart_reg.h"
+#include "soc/io_mux_reg.h"
 #include "CircularBuffer.h"
 
 #include "../include/freertos_includes.h"

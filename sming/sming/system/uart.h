@@ -25,7 +25,8 @@
 #ifndef __UART_H__
 #define __UART_H__
 
-#include "espressif/esp8266/uart_register.h"
+#include "soc/uart_reg.h"
+#include "sming_global.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -105,15 +106,15 @@ typedef struct {
     UART_ParityMode parity;    // chip size in byte
     UART_StopBits   stop_bits;
     UART_HwFlowCtrl flow_ctrl;
-    uint8           UART_RxFlowThresh ;
-    uint32          UART_InverseMask;
+    uint8_t           UART_RxFlowThresh ;
+    uint32_t          UART_InverseMask;
 } UART_ConfigTypeDef;
 
 typedef struct {
-    uint32 UART_IntrEnMask;
-    uint8  UART_RX_TimeOutIntrThresh;
-    uint8  UART_TX_FifoEmptyIntrThresh;
-    uint8  UART_RX_FifoFullIntrThresh;
+    uint32_t UART_IntrEnMask;
+    uint8_t  UART_RX_TimeOutIntrThresh;
+    uint8_t  UART_TX_FifoEmptyIntrThresh;
+    uint8_t  UART_RX_FifoFullIntrThresh;
 } UART_IntrConfTypeDef;
 
 //=======================================
@@ -160,7 +161,7 @@ void UART_ResetFifo(UART_Port uart_no);
   *  
   * @return  null
   */
-void UART_ClearIntrStatus(UART_Port uart_no, uint32 clr_mask);
+void UART_ClearIntrStatus(UART_Port uart_no, uint32_t clr_mask);
 
 /**  
   * @brief   Enable uart interrupts .
@@ -170,7 +171,7 @@ void UART_ClearIntrStatus(UART_Port uart_no, uint32 clr_mask);
   *  
   * @return  null
   */
-void UART_SetIntrEna(UART_Port uart_no, uint32 ena_mask);
+void UART_SetIntrEna(UART_Port uart_no, uint32_t ena_mask);
 
 /**  
   * @brief   Register an application-specific interrupt handler for Uarts interrupts.
@@ -249,7 +250,7 @@ void UART_SetParity(UART_Port uart_no, UART_ParityMode Parity_mode) ;
   *  
   * @return  null
   */
-void UART_SetBaudrate(UART_Port uart_no, uint32 baud_rate);
+void UART_SetBaudrate(UART_Port uart_no, uint32_t baud_rate);
 
 /**  
   * @brief   Configure Hardware flow control.
@@ -260,7 +261,7 @@ void UART_SetBaudrate(UART_Port uart_no, uint32 baud_rate);
   *  
   * @return  null
   */
-void UART_SetFlowCtrl(UART_Port uart_no, UART_HwFlowCtrl flow_ctrl, uint8 rx_thresh);
+void UART_SetFlowCtrl(UART_Port uart_no, UART_HwFlowCtrl flow_ctrl, uint8_t rx_thresh);
 
 /**  
   * @brief   Configure trigging signal of uarts.
@@ -290,7 +291,7 @@ void uart_init_new(void);
   */
 
 
-STATUS uart_tx_one_char(uint8 uart, uint8 TxChar);
+STATUS uart_tx_one_char(uint8_t uart, uint8_t TxChar);
 
 void uart0_write_char(char c);
 

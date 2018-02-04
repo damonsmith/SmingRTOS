@@ -29,4 +29,14 @@
 
 typedef signed short file_t;
 
+// DS - moved this in here from c_types, which already had the following comment:
+/* probably should not put STATUS here */
+typedef enum {
+    OK = 0,
+    FAIL,
+    PENDING,
+    BUSY,
+    CANCEL,
+} STATUS;
+
 #endif

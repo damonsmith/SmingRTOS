@@ -24,7 +24,9 @@
 #include "sming/core/HardwareSerial.h"
 #include "sming/core/Interrupts.h"
 //#include "DriverPWM.h"
-#include "sming/core/HardwarePWM.h"
+
+// DS Reason: seems like power management can be done in a new way via esp-idf API?
+// #include "sming/core/HardwarePWM.h"
 #include "sming/core/HardwareTimer.h"
 #include "sming/core/Timer.h"
 #include "sming/core/SPISoft.h"
@@ -49,7 +51,9 @@
 #include "sming/network/TcpClient.h"
 #include "sming/network/TcpConnection.h"
 #include "sming/network/UdpConnection.h"
-#include "sming/network/rBootHttpUpdate.h"
+
+// DS Reason: can use esp-idf rboot and OTA now
+// #include "sming/network/rBootHttpUpdate.h"
 #include "sming/network/URL.h"
 #include "sming/network/TcpServer.h"
 #include "sming/network/TelnetServer.h"

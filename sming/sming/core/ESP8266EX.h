@@ -9,10 +9,10 @@
 #define _SMING_CORE_ESP8266EX_H_
 
 #include "../include/sming_config.h"
-#include "espressif/esp8266/pin_mux_register.h"
-#include "espressif/esp8266/eagle_soc.h"
+#include "soc/io_mux_reg.h"
+#include "soc/soc.h"
 #include "../wiring/WConstants.h"
-#include "espressif/esp8266/gpio_register.h"
+#include "soc/gpio_reg.h"
 #include "pins_arduino.h"
 #include "../wiring/BitManipulations.h"
 
