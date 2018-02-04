@@ -9,7 +9,7 @@
 //#include "../../sming/SmingCore.h"
 #include "../core/Timer.h"
 #include "../core/Clock.h"
-#include "smartconfig.h"
+#include "esp_smartconfig.h"
 
 StationClass WifiStation;
 
@@ -31,7 +31,7 @@ StationClass::~StationClass()
 
 void StationClass::enable(bool enabled, bool save)
 {
-	uint8 mode = wifi_get_opmode() & ~STATION_MODE;
+	uint8_t mode = wifi_get_opmode() & ~STATION_MODE;
 	if (enabled) mode |= STATION_MODE;
         if (save)
                 wifi_set_opmode((WIFI_MODE)mode);
@@ -136,7 +136,7 @@ IPAddress StationClass::getIP()
 String StationClass::getMAC()
 {
 	String mac;
-	uint8 hwaddr[6] = {0};
+	uint8_t hwaddr[6] = {0};
 	wifi_get_macaddr(STATION_IF, hwaddr);
 	for (int i = 0; i < 6; i++)
 	{
@@ -217,13 +217,13 @@ String StationClass::getSSID()
 	return String((char*)config.ssid);
 }
 
-sint8 StationClass::getRssi()
+int8_t StationClass::getRssi()
 {
 	debugf("Rssi: %d dBm", wifi_station_get_rssi());
 	return wifi_station_get_rssi();
 }
 
-uint8 StationClass::getChannel()
+uint8_t StationClass::getChannel()
 {
 	debugf("Channel: %d CH", wifi_get_channel());
 	return wifi_get_channel();

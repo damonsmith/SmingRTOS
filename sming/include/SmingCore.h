@@ -31,7 +31,6 @@
 #include "sming/core/SPI.h"
 #include "sming/core/QueuedDelegate.h"
 #include "sming/core/QueuedInterrupt.h"
-#include "sming/core/RBootClass.h"
 
 #include "sming/platform/System.h"
 #include "sming/platform/Station.h"

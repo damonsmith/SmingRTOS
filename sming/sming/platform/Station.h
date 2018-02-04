@@ -15,7 +15,8 @@
 #include "../wiring/IPAddress.h"
 
 extern "C" {
-	#include <smartconfig.h>
+	#include "esp_smartconfig.h"
+	#include "esp_wifi_types.h"
 }
 
 enum EStationConnectionStatus
@@ -50,7 +51,7 @@ class Timer;
 typedef Vector<BssInfo> BssList;
 typedef Delegate<void(bool, BssList)> ScanCompletedDelegate;
 typedef Delegate<void()> ConnectionDelegate;
-typedef Delegate<void(sc_status status, void *pdata)> SmartConfigDelegate;
+typedef Delegate<void(smartconfig_status_t status, void *pdata)> SmartConfigDelegate;
 
 class StationClass : protected ISystemReadyHandler
 {
@@ -84,8 +85,8 @@ public:
 
 	String getSSID();
 	String getPassword();
-	sint8 getRssi();
-	uint8 getChannel(); 
+	int8_t getRssi();
+	uint8_t getChannel(); 
 
 	bool startScan(ScanCompletedDelegate scanCompleted);
 	void waitConnection(ConnectionDelegate successfulConnected);
@@ -101,8 +102,8 @@ protected:
 	void internalCheckConnection();
 	static void staticCheckConnection();
 
-	void internalSmartConfig(sc_status status, void *pdata);
-	static void staticSmartConfigCallback(sc_status status, void *pdata);
+	void internalSmartConfig(smartconfig_status_t status, void *pdata);
+	static void staticSmartConfigCallback(smartconfig_status_t status, void *pdata);
 
 private:
 	ScanCompletedDelegate scanCompletedCallback;
@@ -112,24 +113,24 @@ private:
 	ConnectionDelegate onConnectOk;
 	ConnectionDelegate onConnectFail;
 	int connectionTimeOut;
-	uint32 connectionStarted;
+	uint32_t connectionStarted;
 	Timer* connectionTimer;
 };
 
 class BssInfo
 {
 public:
-	BssInfo(bss_info* info);
+	BssInfo(wifi_ap_record_t* info);
 	bool isOpen();
 	const char* getAuthorizationMethodName();
 	uint32_t getHashId();
 
 public:
 	String ssid;
-	uint8 bssid[6];
-	AUTH_MODE authorization;
-	uint8 channel;
-	sint16 rssi;
+	uint8_t bssid[6];
+	wifi_auth_mode_t authorization;
+	uint8_t channel;
+	int16_t rssi;
 	bool hidden;
 };
 

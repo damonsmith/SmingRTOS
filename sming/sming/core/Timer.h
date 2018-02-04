@@ -13,7 +13,7 @@
 #include "Delegate.h"
 #include "../wiring/WiringFrameworkDependencies.h"
 #include "../include/sming_global.h"
-#include "espressif/esp_timer.h"
+#include "esp_timer.h"
 #include "QueuedDelegate.h"
 
 // According to documentation maximum value of interval for ms

@@ -15,8 +15,6 @@
 #include "../wiring/WString.h"
 #include "../wiring/WHashMap.h"
 
-#include "c_types.h"
-
 #define TEMPLATE_MAX_VAR_NAME_LEN	16
 
 class HttpRequest;

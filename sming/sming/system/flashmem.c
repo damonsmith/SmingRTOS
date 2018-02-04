@@ -1,7 +1,6 @@
 #include "flashmem.h"
 #include <stdlib.h>
 
-#include "c_types.h"
 #include "espressif/esp8266/eagle_soc.h"
 
 #define min(a,b) ((a)<(b)?(a):(b))

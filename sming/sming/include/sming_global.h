@@ -1,6 +1,6 @@
 // Based on mziwisky espmissingincludes.h && ESP8266_IoT_SDK_Programming Guide_v0.9.1.pdf && ESP SDK defines
 
-#ifndef __SMING_GOLBAL_H__
+#ifndef __SMING_GLOBAL_H__
 #define __SMING_GLOBAL_H__
 
 #include <stdarg.h>
@@ -9,9 +9,7 @@
 
 #include "limits.h"
 
-#include <espressif/c_types.h>
-#include <espressif/esp8266/ets_sys.h>
-#include <espressif/esp_libc.h>
+#include <rom/ets_sys.h>
 
 #include "sming/include/sming_config.h"
 

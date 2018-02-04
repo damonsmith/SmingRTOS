@@ -25,7 +25,6 @@
 #include "../core/stringconversion.h"
 #include "WCharacter.h"
 #include <stdio.h>
-#include "espressif/esp_common.h"
 #include "string.h"
 #include "WVector.h"
 /*

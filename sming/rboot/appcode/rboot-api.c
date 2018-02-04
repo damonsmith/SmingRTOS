@@ -7,7 +7,6 @@
 //////////////////////////////////////////////////
 
 #include <string.h>
-#include <c_types.h>
 #include <spi_flash.h>
 
 // detect rtos sdk (not ideal method!)

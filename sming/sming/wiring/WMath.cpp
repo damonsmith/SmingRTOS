@@ -20,7 +20,6 @@
 */
 
 //#include "WiringFrameworkIncludes.h"
-#include "c_types.h"
 
 unsigned int static seed;
 

@@ -1,7 +1,6 @@
 //#include <user_config.h>
 #include <SmingCore.h>
 #include <libraries/Adafruit_ILI9341/Adafruit_ILI9341.h>
-#include <c_types.h>
 //#include <libraries/Adafruit_GFX/Adafruit_GFX.h>
 
 

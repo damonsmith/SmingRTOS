@@ -1,14 +1,13 @@
 /*
  * WiringFrameworkDependencies.h
  *
- *  Created on: 28 ÿíâ. 2015 ã.
+ *  Created on: 28 ï¿½ï¿½ï¿½. 2015 ï¿½.
  *      Author: Anakonda
  */
 
 #ifndef WIRING_WIRINGFRAMEWORKDEPENDENCIES_H_
 #define WIRING_WIRINGFRAMEWORKDEPENDENCIES_H_
 
-#include <c_types.h>
 #include <ctype.h>
 #include <math.h>
 #include <string.h>

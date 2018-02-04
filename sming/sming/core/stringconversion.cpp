@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include "stringconversion.h"
 #include "string.h"
-#include "c_types.h"
 
 //Since C does not support default func parameters, keep this function as used by framework
 //and create extended _w funct to handle width

@@ -3,8 +3,6 @@
 
 //#include <inttypes.h>
 
-#include "c_types.h"
-
 //#include "../../wiring/WProgram.h"      // for delayMicroseconds
 #include "sming/core/pins_arduino.h"  // for digitalPinToBitMask, etc
 

@@ -8,7 +8,7 @@
 #include "Interrupts.h"
 #include "Digital.h"
 #include "../include/sming_global.h"
-#include "espressif/esp8266/ets_sys.h"
+#include "rom/ets_sys.h"
 
 #include "portmacro.h"
 

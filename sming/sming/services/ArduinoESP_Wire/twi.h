@@ -21,7 +21,6 @@
 #ifndef SI2C_h
 #define SI2C_h
 #include "../../wiring/Arduino.h"
-#include "c_types.h"
 
 #ifdef __cplusplus
 extern "C" {

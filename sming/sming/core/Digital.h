@@ -8,7 +8,7 @@
 #ifndef _NWDigital_H_
 #define _NWDigital_H_
 
-#include "../core/ESP8266EX.h"
+// #include "../core/ESP8266EX.h"
 
 //#define interrupts()   sei()
 //#define noInterrupts() cli()

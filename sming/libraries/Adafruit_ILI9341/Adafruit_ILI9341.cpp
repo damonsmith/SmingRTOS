@@ -24,7 +24,6 @@
 #include <include/SmingCore.h>
 #include "Adafruit_ILI9341.h"
 #include <limits.h>
-#include <c_types.h>
 
 #define SWAPBYTES(i) ((i>>8) | (i<<8))
 
