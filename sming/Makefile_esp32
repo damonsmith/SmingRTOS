@@ -1,6 +1,6 @@
 #############################################################
 #
-# Root Level Makefile ESP8266 + RTOS
+# Root Level Makefile ESP32 + RTOS
 #
 # (c) by CHERTS <sleuthhound@gmail.com>
 #
@@ -9,15 +9,15 @@
 BUILD_BASE	= build
 FW_BASE		= firmware
 
-TOOLS_ROOT ?= c:/Espressif
+TOOLS_ROOT ?= $(HOME)/esp
 
 # Base directory for the compiler
-XTENSA_TOOLS_ROOT ?= c:/Espressif/xtensa-esp108-elf/bin
+XTENSA_TOOLS_ROOT ?= $(TOOLS_ROOT)/xtensa-esp32-elf/bin
 
 
 # base directory of the ESP8266 SDK package, absolute
-SDK_BASE	?= c:/Espressif/ESP32_RTOS_SDK
-SDK_TOOLS	?= c:/Espressif/utils
+SDK_BASE	?= $(TOOLS_ROOT)/esp_idf
+SDK_TOOLS	?= $(TOOLS_ROOT)/utils
 
 # esptool path and port
 ESPTOOL ?= $(SDK_TOOLS)/esptool.exe
@@ -165,12 +165,12 @@ SDK_LDDIR	= ld
 SDK_INCDIR	= extra_include include include/espressif include/json include/udhcp include/lwip include/lwip/lwip include/lwip/ipv4 include/lwip/ipv6 include/freertos
 
 # select which tools to use as compiler, librarian and linker
-CC		:= $(XTENSA_TOOLS_ROOT)/xtensa-esp108-elf-gcc
-CXX		:= $(XTENSA_TOOLS_ROOT)/xtensa-esp108-elf-g++
-AR		:= $(XTENSA_TOOLS_ROOT)/xtensa-esp108-elf-ar
-LD		:= $(XTENSA_TOOLS_ROOT)/xtensa-esp108-elf-gcc
-OBJCOPY := $(XTENSA_TOOLS_ROOT)/xtensa-esp108-elf-objcopy
-OBJDUMP := $(XTENSA_TOOLS_ROOT)/xtensa-esp108-elf-objdump
+CC		:= $(XTENSA_TOOLS_ROOT)/xtensa-esp32-elf-gcc
+CXX		:= $(XTENSA_TOOLS_ROOT)/xtensa-esp32-elf-g++
+AR		:= $(XTENSA_TOOLS_ROOT)/xtensa-esp32-elf-ar
+LD		:= $(XTENSA_TOOLS_ROOT)/xtensa-esp32-elf-gcc
+OBJCOPY := $(XTENSA_TOOLS_ROOT)/xtensa-esp32-elf-objcopy
+OBJDUMP := $(XTENSA_TOOLS_ROOT)/xtensa-esp32-elf-objdump
 
 SRC_DIR		:= $(MODULES)
 BUILD_DIR	:= $(addprefix $(BUILD_BASE)/,$(MODULES))
